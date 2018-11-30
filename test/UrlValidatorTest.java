@@ -19,7 +19,7 @@ public class UrlValidatorTest extends TestCase {
    String[] invalidAuthority = {".~google.com","1.2.3",""};
    String[] validPort = {"www.google.com:80","www.google.com:21","www.google.com:443"};
    String[] invalidPort = {"www.google.com:65537","www.google.com:-15","-010"};
-   String[] validPath = { "/path", "/123", "/path/", "/path/path","/@"};
+   String[] validPath = { "/path", "/123", "/path/", "/path/path","/@","/path//path","//path"};
    String[] invalidPath = {"//path", "/path//path","/*","{a,b,c}","[]"};
    String[] validQuery = { "?", "?key=value", "#"};
    
@@ -685,7 +685,7 @@ public class UrlValidatorTest extends TestCase {
    /*Test Valid and Invalid Path*/
    public void testYourForthPartition(){
        
-    UrlValidator urlVal = new UrlValidator(UrlValidator.ALLOW_ALL_SCHEMES);
+    UrlValidator urlVal = new UrlValidator(UrlValidator.ALLOW_2_SLASHES);
     
     Random rand = new Random();
        
