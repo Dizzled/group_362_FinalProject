@@ -1,6 +1,4 @@
 
-
-
 import junit.framework.TestCase;
 import java.util.Random;
 //You can use this as a skeleton for your 3 different test approach
@@ -811,3 +809,5 @@ public class UrlValidatorTest extends TestCase {
    }
 
 }
+
+ 
